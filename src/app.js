@@ -1,4 +1,4 @@
-# credits: https://stackoverflow.com/questions/30143082/how-to-get-color-value-from-gradient-by-percentage-with-javascript
+// credits: https://stackoverflow.com/questions/30143082/how-to-get-color-value-from-gradient-by-percentage-with-javascript
 
 var gradient = [
     [
