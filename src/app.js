@@ -1,9 +1,8 @@
-// credits: https://stackoverflow.com/questions/30143082/how-to-get-color-value-from-gradient-by-percentage-with-javascript
-
+$(window).on('load', function(){
 var gradient = [
     [
         0,
-        [53, 92, 125]
+        [53, 92, 1250]
     ],
     [
         25,
@@ -28,7 +27,7 @@ var sliderWidth = 500;
 $( "#slider" ).slider({
     min: 1,
     slide: function( event, ui ) {
-        
+
         var colorRange = []
         $.each(gradient, function( index, value ) {
             if(ui.value<=value[0]) {
@@ -36,22 +35,22 @@ $( "#slider" ).slider({
                 return false;
             }
         });
-        
+
         //Get the two closest colors
         var firstcolor = gradient[colorRange[0]][1];
         var secondcolor = gradient[colorRange[1]][1];
-        
+
         //Calculate ratio between the two closest colors
         var firstcolor_x = sliderWidth*(gradient[colorRange[0]][0]/100);
         var secondcolor_x = sliderWidth*(gradient[colorRange[1]][0]/100)-firstcolor_x;
         var slider_x = sliderWidth*(ui.value/100)-firstcolor_x;
         var ratio = slider_x/secondcolor_x
-        
+
         //Get the color with pickHex(thx, less.js's mix function!)
         var result = pickHex( secondcolor,firstcolor, ratio );
-                       
+
         $('#result').css("background-color", 'rgb('+result.join()+')');
-        
+
     }
 });
 
@@ -65,3 +64,4 @@ function pickHex(color1, color2, weight) {
         Math.round(color1[2] * w1 + color2[2] * w2)];
     return rgb;
 }
+});
