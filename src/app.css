@@ -1,11 +1,30 @@
-#slider {
+#slider-contianer {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#slider-contianer #slider {
     width:500px;
     margin:0 auto;
     background-image: -webkit-linear-gradient(left, rgb(53, 92, 125) 0%, rgb(247, 219, 79) 25%, rgb(53, 92, 125) 50%, rgb(0,0,0) 75%, rgb(53, 92, 125) 100%);
+    height: 0px;
+    border-radius: 0;
+}
+
+#slider-contianer:hover #slider {
+    height: 10px;
+}
+
+#slider-contianer .ui-slider-handle {
+  width: 1px;
+  background: #fff;
+  margin-left: 0;
+  cursor: col-resize;
 }
 
 #result {
     width:100%;
-    height:100px;
-    margin:100px auto;
+    min-height: 100vh;
+    height:100%;
 }
